@@ -5,17 +5,15 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigationcomponent.databinding.FragmentHomeBinding
+import com.example.navigationcomponent.databinding.FragmentSettingsBinding
+import com.example.navigationcomponent.databinding.FragmentTermsConditionsBinding
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
-    private lateinit var binding: FragmentHomeBinding
+class TermsAndConditionsFragment : Fragment(R.layout.fragment_terms_conditions) {
+    private lateinit var binding: FragmentTermsConditionsBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentHomeBinding.bind(view)
+        binding = FragmentTermsConditionsBinding.bind(view)
 
-        binding.btnLogIn.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToLogInFragment()
-            findNavController().navigate(action)
-        }
     }
 }

@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.navigationcomponent.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_logInFragment"
             app:destination="@id/logInFragment"
@@ -21,6 +21,57 @@
     <fragment
         android:id="@+id/logInFragment"
         android:name="com.example.navigationcomponent.LogInFragment"
-        android:label="fragemnt_login"
-        tools:layout="@layout/fragemnt_login" />
+        android:label="Log in"
+        tools:layout="@layout/fragemnt_login">
+        <action
+            android:id="@+id/action_logInFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.navigationcomponent.WelcomeFragment"
+        android:label="{username}"
+        tools:layout="@layout/fragment_welcome" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.navigationcomponent.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/termsAndConditionsFragment"
+        android:name="com.example.navigationcomponent.TermsAndConditionsFragment"
+        android:label="Terms &amp; Conditions"
+        tools:layout="@layout/fragment_terms_conditions" />
+    <action
+        android:id="@+id/action_global_termsAndConditionsFragment"
+        app:destination="@id/termsAndConditionsFragment"
+        app:enterAnim="@anim/slide_in_top"
+        app:exitAnim="@anim/slide_out_bottom"
+        app:popEnterAnim="@anim/slide_in_bottom"
+        app:popExitAnim="@anim/slide_out_top" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.navigationcomponent.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
 </navigation>
